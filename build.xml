@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="InventoryManagementSystem" default="default" basedir=".">
+    <description>Builds, tests, and runs the project InventoryManagementSystem.</description>
+    
+    <property name="src.dir" value="."/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.jar" value="${dist.dir}/InventoryManagementSystem.jar"/>
+    <property name="javafx.dir" value="javafx-sdk-22"/>
+    <property name="lib.dir" value="lib"/>
+    
+    <path id="classpath">
+        <fileset dir="${javafx.dir}/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+    
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+            <classpath refid="classpath"/>
+            <include name="**/*.java"/>
+            <exclude name="javafx-sdk-22/**"/>
+        </javac>
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*.css"/>
+                <include name="**/*.fxml"/>
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar destfile="${dist.jar}" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="InventoryApp"/>
+                <attribute name="Class-Path" value=". lib/sqlite-jdbc-3.49.1.0.jar"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="run" depends="jar">
+        <java classname="InventoryApp" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${dist.jar}"/>
+            </classpath>
+            <jvmarg value="--module-path=${javafx.dir}/lib"/>
+            <jvmarg value="--add-modules=javafx.controls,javafx.fxml,javafx.graphics"/>
+        </java>
+    </target>
+    
+    <target name="default" depends="run"/>
+    
+    <!-- Add JavaFX rebuild targets -->
+    <target name="jfxsa-rebuild" depends="clean,jar">
+        <echo message="Rebuilding JavaFX project"/>
+    </target>
+</project>

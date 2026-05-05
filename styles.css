@@ -1,0 +1,213 @@
+/* Modern Dark Theme for Inventory Management System */
+
+.root {
+    -fx-background-color: #2b2b2b;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-text-fill: white;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4e92df;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+.text-field {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #4e92df;
+    -fx-effect: dropshadow(three-pass-box, rgba(78,146,223,0.4), 3, 0, 0, 0);
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 10 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 2, 0, 0, 0);
+}
+
+.add-button {
+    -fx-background-color: #388e3c;
+    -fx-text-fill: white;
+}
+
+.update-button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.delete-button {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-color: #3c3f41;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.list-cell {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-padding: 8 5;
+    -fx-border-color: transparent transparent #5a5a5a transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.list-cell:selected {
+    -fx-background-color: #4e92df;
+    -fx-text-fill: white;
+}
+
+.list-cell:empty {
+    -fx-background-color: #3c3f41;
+    -fx-border-width: 0;
+}
+
+/* Table View Styling */
+.product-table {
+    -fx-background-color: #3c3f41;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.product-table .column-header {
+    -fx-background-color: #4e92df;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+}
+
+.product-table .column-header-background {
+    -fx-background-color: #4e92df;
+}
+
+.product-table .table-row-cell {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-border-color: transparent transparent #5a5a5a transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.product-table .table-row-cell:selected {
+    -fx-background-color: #4e92df;
+    -fx-text-fill: white;
+}
+
+.product-table .table-row-cell:empty {
+    -fx-background-color: #3c3f41;
+    -fx-border-width: 0;
+}
+
+.product-table .table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-padding: 8 5;
+}
+
+.search-field {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+    -fx-pref-width: 250px;
+}
+
+/* Login Screen Styling */
+.login-grid {
+    -fx-background-color: #333333;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 5);
+}
+
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4e92df;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+    -fx-padding: 0 0 20 0;
+}
+
+.login-button {
+    -fx-background-color: #4e92df;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+}
+
+.login-button:hover {
+    -fx-background-color: #3a7fcf;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+}
+
+.message-label {
+    -fx-font-size: 12px;
+    -fx-padding: 10 0 0 0;
+}
+
+.grid-pane {
+    -fx-background-color: #333333;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+}
+
+.button-box {
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-padding: 10;
+}
+
+.main-layout {
+    -fx-background-color: #2b2b2b;
+    -fx-padding: 15;
+    -fx-spacing: 15;
+}

@@ -1,0 +1,17 @@
+build/
+dist/
+out/
+target/
+.idea/
+.vscode/
+nbproject/private/
+
+*.class
+*.jar
+*.log
+hs_err_pid*.log
+replay_pid*.log
+
+inventory.db
+
+javafx-sdk-22/
