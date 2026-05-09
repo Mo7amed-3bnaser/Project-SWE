@@ -46,14 +46,14 @@
     <target name="jar" depends="compile">
         <jar destfile="${dist.jar}" basedir="${build.dir}">
             <manifest>
-                <attribute name="Main-Class" value="InventoryApp"/>
+                <attribute name="Main-Class" value="com.inventory.InventoryApp"/>
                 <attribute name="Class-Path" value=". lib/sqlite-jdbc-3.49.1.0.jar"/>
             </manifest>
         </jar>
     </target>
     
     <target name="run" depends="jar">
-        <java classname="InventoryApp" fork="true">
+        <java classname="com.inventory.InventoryApp" fork="true">
             <classpath>
                 <path refid="classpath"/>
                 <path location="${dist.jar}"/>

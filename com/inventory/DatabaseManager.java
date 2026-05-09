@@ -125,12 +125,13 @@ public class DatabaseManager {
             // لوب على كل الـ rows في الـ result
             while (rs.next()) {
                 // استخراج الـ data من كل row
+                int id = rs.getInt("id");
                 String name = rs.getString("name");
                 int quantity = rs.getInt("quantity");
                 double price = rs.getDouble("price");
 
                 // عمل object جديد للـ product وإضافته للـ list
-                Product product = new Product(name, quantity, price);
+                Product product = new Product(id, name, quantity, price);
                 products.add(product);
             }
 
@@ -164,12 +165,13 @@ public class DatabaseManager {
                 // لوب على كل الـ rows في الـ result
                 while (rs.next()) {
                     // استخراج الـ data من كل row
+                    int id = rs.getInt("id");
                     String name = rs.getString("name");
                     int quantity = rs.getInt("quantity");
                     double price = rs.getDouble("price");
 
                     // عمل object جديد للـ product وإضافته للـ list
-                    Product product = new Product(name, quantity, price);
+                    Product product = new Product(id, name, quantity, price);
                     products.add(product);
                 }
             }
